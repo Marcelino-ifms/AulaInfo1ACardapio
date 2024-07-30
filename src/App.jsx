@@ -60,16 +60,49 @@ export default function App() {
 
 
 
-    return (
-       <div>
-            {
-                listaProdutos.map( (objeto)  =>
-                  <div key={objeto.id}>
-                      <p>{objeto.item}</p>
-                </div>
-                
-                )
-            }
-       </div>
-    );
+ return(
+    <div className="bloco-principal">
+        <div className="bloco-produto">
+
+            {listaProdutos.map((produto) => <div key={produto.id}>
+            <img scr={produto.imagem}/>
+            <p>{produto.item}</p>
+            <button onClick={() => adicionarProdutoPedido(produto)}>Quero</button>
+             </div>   
+            )}
+
+        </div>
+    </div>
+ );
+
+
+ const [listaPedidos, Pedidos] = useState([]);
+
+ const adicionarProdutoPedido = (produto) => {
+    setPedidos([...listaPedidos, produto]); //somente criei a função sem chamar
+ }
+
+ console.table(listaPedidos);
+
+ //para rendeirizar para o usuário em forma de tabela
+
+ <div>
+    <div class="bloco-pedidos">
+        <p>Meus Pedidos</p>
+        {
+            listaPedidos.map((produto)=>
+            <table key={produto.id}>
+                <tr> // linha
+                <td>{produto.item}</td> //coluna
+                <td>{produto.preco}</td> //coluna
+                <td>
+                <button onClick={() => removerPedido(produto)}>Remover</button>
+                </td>
+                </tr>
+                </table>
+
+            )
+        }
+    </div>
+ </div>
 }

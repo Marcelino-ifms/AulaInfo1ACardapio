@@ -1,0 +1,36 @@
+ //já estava:
+ return (
+       <div>
+            {
+                listaProdutos.map( (objeto)  =>
+                  <div key={objeto.id}>
+                      <p>{objeto.item}</p>
+                </div>
+                
+                )
+            }
+       </div>
+    );
+
+
+    no react => state (estado)
+
+    {} => objeto
+    [] => array => lista
+
+    faço a parte lógica e rendeirizo para o usuário
+
+    1 opção =>
+    2 opção =>
+
+    <div key={produto.id}> </div> vai aparecer o id de cada produto do cardápio
+
+    .map => olhar cada produto e rendeirizar-listaProdutos
+
+    //tags para tabela:
+
+    cabeçalho(tipo) => <th> 
+    linha => <tr>
+    coluna(item) => <td>
+
+    ***pergunat ao professor se a linha é primeiro ou a coluna***
