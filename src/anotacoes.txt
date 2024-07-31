@@ -1,10 +1,10 @@
- //já estava:
+ //já estava (exemplo):
  return (
        <div>
             {
                 listaProdutos.map( (objeto)  =>
-                  <div key={objeto.id}>
-                      <p>{objeto.item}</p>
+                  <div key={objeto.id}> //para o usuário aparece o id não o "objeto.id"
+                      <p>{objeto.item}</p> //para o usuário aparece o nome do objeto não o "objeto.item"
                 </div>
                 
                 )
@@ -25,7 +25,9 @@
 
     <div key={produto.id}> </div> vai aparecer o id de cada produto do cardápio
 
-    .map => olhar cada produto e rendeirizar-listaProdutos
+    PROVA: .map => olhar cada produto e RENDEIRIZAR -listaProdutos <= MAP => transformar a informação em html
+
+    o parâmetro pode ser qualquer nome
 
     //tags para tabela:
 
@@ -33,4 +35,30 @@
     linha => <tr>
     coluna(item) => <td>
 
-    ***pergunat ao professor se a linha é primeiro ou a coluna***
+    para rendeirizar para o usuário em forma de tabela => bloco-produtos
+
+    //remover item por id:
+const removerItem = (id)=> {
+        let listaAux = listaPedidos.filter((pedido)=> pedido.id !== id);
+        setPedidos(listaAux);
+    }
+     <button onClick={() => removerItem(produto.id)}>Remover</button>
+
+     
+
+
+    criar variavel auxiliar
+    definir valor inicial usando true e false
+
+    if( 0 == true)
+
+    
+    const remover1item = (id)=> {
+        let listaAux2  = id
+        if( id == x){
+
+        }
+        else{
+
+        };
+    }
