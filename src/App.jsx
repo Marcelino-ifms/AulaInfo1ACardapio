@@ -63,13 +63,23 @@ export default function App() {
        setPedidos([...listaPedidos, produto]); //somente criei a função sem chamar, por isso está antes do return
     }
    
-    console.table(listaPedidos);
 
-
-    const removerItem = (id)=> {
-        let listaAux = listaPedidos.filter((pedido)=> pedido.id !== id);
-        setPedidos(listaAux);
+    const removerItem = (id, index)=> {
+        let remover = false;
+        let listaAux = listaPedidos.filter((pedido)=> {
+          if(pedido.id == id)  {
+            if(remover == index) {
+                return pedido
+         } }
+              else{ 
+            return null; // ==0 retorna valor nulo
+            }
     }
+ );
+ setPedidos(listaAux);
+}
+
+console.table(listaPedidos);
 
  return(
     <div className="bloco-principal">
@@ -101,6 +111,5 @@ export default function App() {
         }
         </div>
     </div>
- );
-}
-
+  );
+} 

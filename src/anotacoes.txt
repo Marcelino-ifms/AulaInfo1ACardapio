@@ -62,3 +62,8 @@ const removerItem = (id)=> {
 
         };
     }
+
+criar um if para comparar posições
+retornar nulo
+
+ 
